@@ -1,13 +1,13 @@
 name: Build
 on: [push]
 env:
-  FLYWAY_VERSION: 6.5.3
+  FLYWAY_VERSION: 7.5.3
 jobs:
   build:
     runs-on: ubuntu-latest
     services:
       faf-db:
-        image: mysql:5.7
+        image: mariadb:10.5
         ports:
           - 3306:3306
         options: >-
