@@ -95,7 +95,7 @@ CREATE TABLE `avatars_list` (
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `filename` varchar(212) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `url` varchar(255) GENERATED ALWAYS AS (concat('https://content.faforever.com/faf/avatars/',`filename`)) VIRTUAL,
+  `url` varchar(255) COLLATE utf8mb4_unicode_ci GENERATED ALWAYS AS (concat('https://content.faforever.com/faf/avatars/',`filename`)) VIRTUAL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `filename` (`filename`,`tooltip`)
 ) ENGINE=InnoDB AUTO_INCREMENT=363 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='List of all available avatars';
